@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/test.css">
+    <link rel="icon" href="../image/uoftlogo.png">
+    <title> Course Team </title>
+
+</head>
+
+<body>
+    <div class="bgcolor">
+        <header class="topHead">
+            <img class="uoft" src="../static/image/uoftlogo.png" alt="logo">
+            <input id="button" type="checkbox">
+            <label for="button" class="threeLines">
+                <span>&#9776;</span>
+            </label>
+            <nav class="list-container">
+              <ul class="list-childs">
+                    <li><a class="location" href="{{ url_for('home') }}">Home</a></li>
+                    <li><a class="location" href="{{ url_for('lecture') }}">Lectures</a></li>
+                    <li><a class="location" href="https://piazza.com/class/kxj5alixpjg4ft" target="_blank">Piazza</a></li>
+                    <li><a class="location" href="https://markus.utsc.utoronto.ca/cscb20w22" target="_blank">MarkUs</a></li>
+                    <li><a class="location" href="{{ url_for('assignments') }}">Assignments</a></li>
+                    <li><a class="location" href="{{ url_for('anonfeedback') }}">Anon Feedback</a></li>
+                    <li><a class="location" href="{{ url_for('labs') }}">Labs</a></li>
+                    <li><a class="location" href="{{ url_for('courseteam') }}">CourseTeam</a></li>
+                    <li><a class="location" href="../src/pdfs/syllabus.pdf" target="_blank">Syllabus</a></li>
+                </ul>
+            </nav>
+        </header>
+
+
+
+
+
+        <main>
+            <div id="teachingContainer">
+                <div id="professor">
+                    <div id="r1c2-3">
+                        <h1>Professor Purva Gawde</h1>
+                        <br>
+                        <p><b>Email:</b> purva.gawde@utoronto.ca</p>
+                        <p><b>Office:</b> IC484</p>
+                        <p><b>Phone:</b> 647.601.4658</p>
+                        <p><b>Lectures:</b> Mondays 9:00-11:00 in HLB101</p>
+                        <p><b>Email:</b> purva.gawde@utoronto.ca</p>
+                    </div>
+
+                    <img id="purvapic" src="../static/image/purva.jpg"></img>
+                </div>
+                <div id=taContainer>
+                    <h3>Teaching Assistants</h3>
+                    <div id="taList">
+                      <!-- Probably not good practice to use newline <br> but I was unable to change it via the css. style = "text-align:center;
+  vertical-align:middle; 
+  display:inline-block; -->
+                        <div id="ta1"> <br><br><br> Vidiya</div>
+                        <div id="ta2"> <br><br><br> Daniel </div>
+                        <div id="ta3"> <br><br><br> Rick </div>
+                        <div id="ta4"> <br><br><br> Redacted </div>
+                        <div id="ta5"> <br><br><br> Benny B09 Star</div>
+                  
+                    
+                    </div>
+                    
+                    <p class="taTIP">
+                      SUPER PROFESSIONAL BONUS TA TIP: <br>Don't procrastinate!
+                    </p>
+                </div>
+            </div>
+
+            <div class = "footer">
+                <hr class="line">
+                <br>
+
+                <a href="https://www.utsc.utoronto.ca/cms/faculty-of-computer-science" target="_blank">Faculty of
+                    Computer Science at UofT</a>
+
+                <p>Copyright &#169; 2022, Jane Doe</p>
+
+            </div>
+        </main>
+
+    </div>
+</body>
+
+</html>

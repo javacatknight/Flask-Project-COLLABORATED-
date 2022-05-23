@@ -1,0 +1,362 @@
+/*1-163 are COLLABORATOR's template base code*/
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: rgba(255,255,255,255);
+    font-family: Helvetica, sans-serif;
+    
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    
+  }
+
+
+/************************ HEADER ********************************/
+
+
+.topHead{
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  text-align: center;
+  border-bottom: 1px solid black;
+}
+
+.button{
+  visibility: hidden;
+}
+
+.uoft{
+  display: flex;
+  height: 80px;
+  width: 80px;
+  margin: 10px;
+}
+
+.list-container .list-childs{
+  position: fixed;
+  list-style: none;
+  width: 100%;
+  height: 100vh;
+  padding: 15px;
+  left: -150%;
+  transition: all 0.7s;
+}
+
+.list-container .location{
+  margin: 0 0 15px 15px;
+}
+
+.location{
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+  transition: all 0.3s;
+  
+}
+
+.location:hover{
+  color: rgb(97, 97, 240);
+}
+
+#button:checked ~ .list-container .list-childs{
+  left: 0;
+}
+
+#button, .threeLines{
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  font-size: 35px;
+  margin: 0 15px 0 0;
+  height: 100%;
+}
+
+@media screen and (min-width: 1240px) {
+  #button, .threeLines{
+      visibility: hidden;
+  }
+
+  .topHead{
+      display: grid;
+      grid-template-columns: 1fr auto;
+  }
+
+  .list-container{
+      display: flex;
+      align-items: center;
+  }
+
+  .list-container .list-childs{
+      all: unset;
+      display: flex;
+      list-style: none;
+      
+  }
+
+.list-container .location{
+    margin: 0 35px 0 0;
+  }
+}
+
+
+
+
+/************************ Footer ********************************/
+
+.line{
+    width: 95%;
+    margin: 0 auto;
+    background-color: black;
+    border: none;
+    height: 1px;
+
+}
+
+footer{
+    text-align: center;
+    width: 100%;
+    margin-top: auto; 
+}
+
+@media screen and (orientation:landscape){
+  footer{
+  position: relative;
+  top: 190px;
+  }
+  .d1image img{
+    position: relative;
+    top: 20px;
+  }
+}
+
+footer p{
+    margin: 5px;
+}
+
+footer a{
+    transition: all 0.3s;
+}
+footer a:hover{
+    color: rgb(97, 97, 240);
+}
+
+@media screen and (max-width: 904px) {
+
+  footer p, footer a, footer hr{
+    font-size:2vw;
+  }
+  footer hr{
+    position: relative;
+  }
+}
+
+
+
+
+
+/************************** COURSETEAM **************/
+@keyframes changeColor {
+  0% {
+    background-color: #d8cffd;
+    }
+  25% {
+    background-color: #cddaf9; /*background-color: #000000; alternate*/
+   }
+  75% {
+    background-color: #a0a3f1;
+  }
+  100%{
+    background-color: #c2b3ff
+  }
+  
+}
+
+#teachingContainer{
+  padding: 7%;
+  padding-top:15vh;
+  margin:0 auto;
+}
+
+/* Is not working....can't apply any styling to divs actually. Tested inline styling as well as moving the order of this rule to the very last line to be applied final but not working.
+#teachingContainer div{
+  font-family: Helvetica, sans-serif;
+} */
+  #professor {
+  animation-name: changeColor;
+  animation-duration: 15s;
+  animation-iteration-count: infinite;
+    
+  align-self:stretch;
+  padding: 5%;
+
+  display:grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: space-evenly;   
+}
+
+#professor *{
+  animation-name: changeColor;
+  animation-duration: 15s;
+  animation-iteration-count: infinite;
+}
+
+#purvapic{
+    width:auto;
+    height:auto;
+    min-width:50%;
+    border-radius: 5px;
+    border: dotted;
+  }
+/*row1 columns 2,3*/
+#r1c2-3{
+  justify-content:stretch;
+  grid-column:2/3;
+  grid-row:1;
+  line-height:3vh;
+  }
+
+/*MOBILE LANDSCAPE*/
+@media (orientation:landscape) and (max-width:1000px){
+#professor{
+  font-size:0.6em;
+  padding-top:100px;
+  grid-template-rows: auto;
+
+  display:grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+#professor *{
+  position:relative;
+  line-height:5vh;
+}
+  #r1c2-3{
+  line-height:5vh;
+  }
+}
+
+/*MOBILE PORTRAIT*/
+@media screen and (max-width:400px) {
+  #professor{
+    font-size:0.7em;
+    padding-top:50px;
+  }
+  #professor *, #taContainer *{
+    font-size: 1em; /*LIFE SAVER*/
+  }
+  #taContainer *{
+    font-size:0.7em;
+  }
+  body{
+    font-size:1em;
+  }
+
+  
+}
+
+
+
+/*CONTENT FOR TA SECTION*/
+  /*Struggled immensely trying to put header in one row, tas on their own rows and ta info on its own row
+  some suggestions i saw were using media queries for each dimension but thats a lot of work so instead, i changed the single row items not to be in the grid container
+  although the layout still resembles grid*/
+
+  
+#taContainer{
+  background-color: #e8e3fd;
+  padding:3%;
+  padding-bottom:5%; /*Fixed the issue of the last box popping out*/
+}
+
+#taContainer > *{
+  background-color: #e8e3fd;
+  padding:3%;
+}
+
+#taContainer h3 {
+  text-align: center;
+  background-color: aliceblue;
+  margin:3%;
+}
+
+
+/*Ta List Display*/
+#taList {
+  display:grid;
+  grid-auto-flow: row;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 3fr)); 
+  grid-template-rows: repeat((auto-fit, minmax(300px, 1fr)));
+  
+  gap:2%;
+  border: 1px grey;
+  align-items: center;
+}
+
+#taList *{
+    /*formerly, when everything was grid, woudlnt't let me to grid-row-start:2;*/
+  min-height:11vh;
+  min-width:12vw;
+  position:relative;
+  
+  background-color: aliceblue;
+  border-radius: 25px;
+  text-align:center;
+  vertical-align:middle; 
+  display:inline-block; 
+
+
+}
+
+
+.taTIP{
+  z-index: 1;
+  display: none;
+  margin:3%;
+}
+/*Hover popup pc only*/
+@media screen and (min-width:400px){
+  #taList:hover ~ .taTIP{
+    display:block;
+    /* grid-row:auto;
+    grid-column:auto; */
+    /* min-width:3vw; */
+    z-index:3;
+    margin-top:50px;
+    background-color: rgb(255, 242, 218);
+  }
+
+}
+
+/*MOBILE PORTRAIT + LANDSCAPE*/
+@media screen and (max-width:1000px){
+  #taContainer{
+    padding-bottom:10%;
+  }
+  #taList *{
+    margin-bottom:5%;
+    padding-bottom:5%;
+  }
+}
+/*MOBILE PORTRAIT ONLY) */
+@media screen and (max-width:400px){
+  #taList *{
+    /*formerly, when everything was grid, woudlnt't let me to grid-row-start:2;*/
+  min-height: 10vh;
+  min-width:5vw;
+}
+}
+  @media screen and (mid-width:400px) and (max-width:1000px){
+    #taList *{
+      min-height:20vh;
+    }
+  }
+
+
+
